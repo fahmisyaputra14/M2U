@@ -7,7 +7,7 @@
    <containsHeaders>true</containsHeaders>
    <csvSeperator></csvSeperator>
    <dataFileGUID>30953c90-a99a-47db-a67e-461566fafbde</dataFileGUID>
-   <dataSourceUrl>/Users/fahmi/Documents/Project/Katalon/Mobile/M2U Dev/Data/LoginData.xlsx</dataSourceUrl>
+   <dataSourceUrl>/Users/fahmi/Documents/Project/Katalon/Mobile/Mobile/Data/LoginData.xlsx</dataSourceUrl>
    <driver>ExcelFile</driver>
    <isInternalPath>false</isInternalPath>
    <query></query>

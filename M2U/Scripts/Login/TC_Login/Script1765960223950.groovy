@@ -17,55 +17,60 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
+import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 
-TestData data = TestDataFactory.findTestData('Data Files/Login/LoginData')
 
-int rowCount = data.getRowNumbers()
-for (int i = 1; i <= rowCount; i++) {
-	
-	String username = data.getValue('username', i)
-	String password = data.getValue('password', i)
-	String expected = data.getValue('expected', i)
-	
+
+def data = findTestData('Data Files/Login/LoginData')
+	// ===== Flow 1 (Row 1) =====
 	Mobile.startApplication('/Users/fahmi/Downloads/app-fcm-debug.apk', false)
+
+	CustomKeywords.'auth.Login.login'(
+		data.getValue('username', 1),
+		data.getValue('password', 1)
+	)
+	CustomKeywords.'auth.Login.verifyResult'(
+		data.getValue('expected', 1)
+	)
 	
-	Mobile.tap(findTestObject('Object Repository/Login/android.widget.Button - MULAI'), 0)
+	Mobile.closeApplication()
+	//Mobile.clearApplicationData('id.com.uiux.mobile')
+	Runtime.getRuntime().exec("adb shell pm clear id.com.uiux.mobile")
 	
-	Mobile.scrollToText('SETUJU DAN LANJUT')
-	Mobile.tap(findTestObject('Object Repository/Login/android.widget.CheckBox'), 0)
-	Mobile.tap(findTestObject('Object Repository/Login/android.widget.Button - SETUJU DAN LANJUT'), 0)
-	Mobile.tap(findTestObject('Object Repository/Login/android.widget.ImageButton'), 0)
-	Mobile.tap(findTestObject('Object Repository/Login/android.widget.EditText - User-ID'), 0)
-	Mobile.setText(findTestObject('Object Repository/Login/android.widget.EditText - User-ID (1)'), username, 10)
-	Mobile.hideKeyboard()
-	Mobile.tap(findTestObject('Object Repository/Login/android.widget.Button - LANJUT'), 0)
-	Mobile.tap(findTestObject('Object Repository/Login/android.widget.Button - YA'), 0)
-	Mobile.tap(findTestObject('Object Repository/Login/android.widget.EditText - Masukan Password Anda'), 0)
-	Mobile.setText(findTestObject('Object Repository/Login/android.widget.EditText - Masukan Password Anda'), password, 10)
-	Mobile.hideKeyboard()
-	Mobile.tap(findTestObject('Object Repository/Login/android.widget.Button - LOGIN'), 0)
 	
-	if (expected == 'success') {
-		Mobile.tap(findTestObject('Object Repository/Login/android.widget.ImageButton (1)'), 0)
-		Mobile.verifyElementVisible(findTestObject('Object Repository/Login/android.widget.TextView - U Transaction Account'), 10)
-		Mobile.takeScreenshot('/Users/fahmi/Documents/Project/Katalon/Mobile/M2U Dev/Screenshoot/screenshot.png')
-		Mobile.tap(findTestObject('Object Repository/Login/android.widget.ImageButton (2)'), 0)
-		Mobile.tap(findTestObject('Object Repository/Login/android.widget.TextView - LOGOUT'), 0)
-		Mobile.getText(findTestObject('Object Repository/Login/android.widget.TextView - Anda telah berhasil keluar.Terima kasih telah menggunakan M2U hari ini'), 0)
-		Mobile.takeScreenshot('/Users/fahmi/Documents/Project/Katalon/Mobile/M2U Dev/Screenshoot/Logout.png')
-		Mobile.closeApplication()
+	
+	// ===== Flow 2 (Row 2) =====
+	//Mobile.startApplication('/Users/fahmi/Downloads/app-fcm-debug.apk', false)
+	Mobile.startExistingApplication('id.com.uiux.mobile')
+	
+		CustomKeywords.'auth.Login.login'(
+			data.getValue('username', 2),
+			data.getValue('password', 2)
+		)
+		CustomKeywords.'auth.Login.verifyResult'(
+			data.getValue('expected', 2)
+		)
 		
-	} else {
-		println("Login Salah")
-	}
-	
-}
+		Mobile.closeApplication()
+		//Mobile.clearApplicationData('id.com.uiux.mobile')
+		Runtime.getRuntime().exec("adb shell pm clear id.com.uiux.mobile")
 
-
-
-
-
-
+	// ===== Flow 3 (Row 3) =====
+	//Mobile.startApplication('/Users/fahmi/Downloads/app-fcm-debug.apk', false)
+	/*	Mobile.startExistingApplication('id.com.uiux.mobile')
+			
+			CustomKeywords.'auth.Login.login'(
+				data.getValue('username', 3),
+				data.getValue('password', 3)
+			)
+			CustomKeywords.'auth.Login.verifyResult'(
+				data.getValue('expected', 3)
+			)
+			
+			Mobile.closeApplication()
+			//Mobile.clearApplicationData('id.com.uiux.mobile')
+			Runtime.getRuntime().exec("adb shell pm clear id.com.uiux.mobile")*?
+			
 
 
 /*

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TransferAntarMaybank</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>a676b6d7-611c-4442-a1cd-c2766b2beb59</testCaseGuid>
+</TestCaseEntity>

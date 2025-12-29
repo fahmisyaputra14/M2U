@@ -22,7 +22,7 @@ import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 
 import internal.GlobalVariable
 
-class Login {
+public class Login {
 
 	@Keyword
 	def login(String username, String password) {
@@ -53,8 +53,6 @@ class Login {
 			Mobile.setText(findTestObject('Object Repository/Login/android.widget.EditText - Masukan Password Anda'), password,0)
 			Mobile.hideKeyboard()
 			Mobile.tap(findTestObject('Object Repository/Login/android.widget.Button - LOGIN'), 0)
-
-			
 		}else {
 
 			Mobile.tap(findTestObject('Object Repository/Login/android.widget.Button - MULAI'), 0)
@@ -73,8 +71,6 @@ class Login {
 			Mobile.setText(findTestObject('Object Repository/Login/android.widget.EditText - Masukan Password Anda'), password,0)
 			Mobile.hideKeyboard()
 			Mobile.tap(findTestObject('Object Repository/Login/android.widget.Button - LOGIN'), 0)
-
-			
 		}
 	}
 

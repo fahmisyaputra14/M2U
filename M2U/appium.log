@@ -76,3 +76,11 @@
 [38;5;177m[772d6a55][0m[38;5;86m[HTTP][0m <-- GET /wd/hub/session/772d6a55-f93b-459e-8684-501f3d235ac6/source 200 418 ms - 34868 
 [38;5;177m[772d6a55][0m[38;5;86m[HTTP][0m [37m-->[39m [37mGET[39m [37m/wd/hub/session/772d6a55-f93b-459e-8684-501f3d235ac6/screenshot[39m {}
 [38;5;177m[772d6a55][0m[38;5;86m[HTTP][0m <-- GET /wd/hub/session/772d6a55-f93b-459e-8684-501f3d235ac6/screenshot 200 2403 ms - 1120556 
+[38;5;177m[772d6a55][0m[38;5;86m[HTTP][0m [37m-->[39m [37mDELETE[39m [37m/wd/hub/session/772d6a55-f93b-459e-8684-501f3d235ac6[39m {}
+[38;5;177m[772d6a55][0m[38;5;107m[AppiumDriver@e43e][0m Removing session 772d6a55-f93b-459e-8684-501f3d235ac6 from our master session list
+[38;5;177m[772d6a55][0m[38;5;-87m[AndroidUiautomator2Driver@35b0][0m Did not get the confirmation of UiAutomator2 server session deletion. Original error: 'DELETE /' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+[38;5;177m[772d6a55][0m[38;5;86m[HTTP][0m [37m-->[39m [37mDELETE[39m [37m/wd/hub/session/772d6a55-f93b-459e-8684-501f3d235ac6[39m {}
+[38;5;177m[772d6a55][0m[38;5;86m[HTTP][0m <-- DELETE /wd/hub/session/772d6a55-f93b-459e-8684-501f3d235ac6 404 11 ms - 2204 
+[38;5;177m[772d6a55][0m[38;5;-87m[AndroidUiautomator2Driver@35b0][0m The UIA2 server has not been terminated within 5000ms timeout. Continuing anyway
+[38;5;177m[772d6a55][0m[38;5;-87m[AndroidUiautomator2Driver@35b0][0m Restoring hidden api policy to the device default configuration
+[38;5;177m[772d6a55][0m[38;5;86m[HTTP][0m <-- DELETE /wd/hub/session/772d6a55-f93b-459e-8684-501f3d235ac6 200 6201 ms - 14 

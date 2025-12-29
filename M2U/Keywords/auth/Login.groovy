@@ -75,7 +75,27 @@ public class Login {
 	}
 
 	@Keyword
-	def verifyResult(String expected) {
+	def loginExistingData (String password) {
+
+		
+		if (Mobile.waitForElementPresent(findTestObject('Object Repository/Login/ImageViewUser'), 5, FailureHandling.OPTIONAL)) {
+			
+			Mobile.tap(findTestObject('Object Repository/Login/TextView-Login'), 1)
+			Mobile.tap(findTestObject('Object Repository/Login/android.widget.EditText - Masukan Password Anda'), 0)
+			Mobile.setText(findTestObject('Object Repository/Login/android.widget.EditText - Masukan Password Anda'), password,0)
+			Mobile.hideKeyboard()
+			Mobile.tap(findTestObject('Object Repository/Login/android.widget.Button - LOGIN'), 0)
+		} 
+		else {
+			
+			Mobile.closeApplication()
+	
+		}
+	}
+
+
+	@Keyword
+	def verifyResultLogin(String expected) {
 		if (expected == 'success') {
 			Mobile.verifyElementVisible(findTestObject('Object Repository/Login/PopUpNotifikasiAplikasiAndaAktif'),10)
 			Mobile.tap(findTestObject('Object Repository/Login/ImageButtonSilangNotifikasiAplikasiAndaAktif'), 5)

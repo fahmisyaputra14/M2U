@@ -1,5 +1,4 @@
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
-import static com.kms.katalon.core.model.FailureHandling.CONTINUE_ON_FAILURE
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
@@ -15,29 +14,20 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
-import internal.GlobalVariable
-import org.junit.runner.notification.Failure
+import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
-import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
-import com.kms.katalon.core.model.FailureHandling
-
-import auth.Login
-import auth.Transfer
 
 
 def data = findTestData('Data Files/Login/LoginData')
-
+	// ===== Flow 1 (Row 1) =====
+	//Mobile.startApplication('/Users/fahmi/Downloads/app-fcm-debug.apk', false)
 	Mobile.startExistingApplication('id.com.uiux.mobile')
-	CustomKeywords.'auth.Login.loginExistingData'(
-		
-		data.getValue('password', 1)
-		
-		)
-
-	//Mobile.callTestCase(findTestCase('Test Cases/Login/LoginFlow'), [:], CONTINUE_ON_FAILURE)
 	
-	/*CustomKeywords.'auth.Transfer.transferAntarMaybank'(
-			
-		data.getValue('NoRekening', 1)
-		
-		)*/
+	CustomKeywords.'auth.Login.loginExistingData'(
+		//data.getValue('username', 1),
+		data.getValue('password', 1)
+	)
+	
+	//Mobile.closeApplication()
+	//Mobile.clearApplicationData('id.com.uiux.mobile')
+	//Runtime.getRuntime().exec("adb shell pm clear id.com.uiux.mobile")

@@ -49,4 +49,21 @@ public class Transfer {
 			Mobile.tap(findTestObject('Object Repository/Transfer/TransferAntarMaybank/Button-PROSES-Transfer'), 0)
 		}
 	}
+
+	/*@Keyword
+	def loginExistingData (String username, String password) {
+
+		Mobile.delay(1)
+		if (Mobile.waitForElementPresent(findTestObject('Object Repository/Login/android.widget.EditText - User-ID'), 5, FailureHandling.STOP_ON_FAILURE)) {
+
+			Mobile.setText(findTestObject('Object Repository/Login/android.widget.EditText - User-ID (1)'), username,0)
+			Mobile.hideKeyboard()
+			Mobile.tap(findTestObject('Object Repository/Login/android.widget.Button - LANJUT'), 0)
+			Mobile.tap(findTestObject('Object Repository/Login/android.widget.Button - YA'), 0)
+			Mobile.tap(findTestObject('Object Repository/Login/android.widget.EditText - Masukan Password Anda'), 0)
+			Mobile.setText(findTestObject('Object Repository/Login/android.widget.EditText - Masukan Password Anda'), password,0)
+			Mobile.hideKeyboard()
+			Mobile.tap(findTestObject('Object Repository/Login/android.widget.Button - LOGIN'), 0)
+		}
+	}*/
 }

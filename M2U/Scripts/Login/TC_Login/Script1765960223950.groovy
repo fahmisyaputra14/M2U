@@ -24,12 +24,13 @@ import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 def data = findTestData('Data Files/Login/LoginData')
 	// ===== Flow 1 (Row 1) =====
 	Mobile.startApplication('/Users/fahmi/Downloads/app-fcm-debug.apk', false)
+	//Mobile.startExistingApplication('id.com.uiux.mobile')
 
 	CustomKeywords.'auth.Login.login'(
 		data.getValue('username', 1),
 		data.getValue('password', 1)
 	)
-	CustomKeywords.'auth.Login.verifyResult'(
+	CustomKeywords.'auth.Login.verifyResultLogin'(
 		data.getValue('expected', 1)
 	)
 	
@@ -39,7 +40,7 @@ def data = findTestData('Data Files/Login/LoginData')
 	
 	
 	
-	// ===== Flow 2 (Row 2) =====
+	/*// ===== Flow 2 (Row 2) =====
 	//Mobile.startApplication('/Users/fahmi/Downloads/app-fcm-debug.apk', false)
 	Mobile.startExistingApplication('id.com.uiux.mobile')
 	
@@ -53,24 +54,7 @@ def data = findTestData('Data Files/Login/LoginData')
 		
 		Mobile.closeApplication()
 		//Mobile.clearApplicationData('id.com.uiux.mobile')
-		Runtime.getRuntime().exec("adb shell pm clear id.com.uiux.mobile")
-
-	// ===== Flow 3 (Row 3) =====
-	//Mobile.startApplication('/Users/fahmi/Downloads/app-fcm-debug.apk', false)
-	/*	Mobile.startExistingApplication('id.com.uiux.mobile')
-			
-			CustomKeywords.'auth.Login.login'(
-				data.getValue('username', 3),
-				data.getValue('password', 3)
-			)
-			CustomKeywords.'auth.Login.verifyResult'(
-				data.getValue('expected', 3)
-			)
-			
-			Mobile.closeApplication()
-			//Mobile.clearApplicationData('id.com.uiux.mobile')
-			Runtime.getRuntime().exec("adb shell pm clear id.com.uiux.mobile")*?
-			
+		Runtime.getRuntime().exec("adb shell pm clear id.com.uiux.mobile")*/
 
 
 /*
